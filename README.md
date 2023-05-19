@@ -10,7 +10,7 @@ Technologies used :
  ethersjs
  IPFS
  ```
- The project is deployed to BNB testnet chain. https://testnet.bscscan.com/address/0x524ACa1080e9D29d73ddB21c7cAE66f0dBff73DF#code
+ The project is deployed to Polygon testnet chain. https://mumbai.polygonscan.com/address/0xe11fb0d3e16e0cd3240e14be0e7420f0d2956276
  
  prerequisites :
  ```
