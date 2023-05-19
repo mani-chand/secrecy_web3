@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import ABI from "./../Asserts/ABI.json";
 import { create } from "ipfs-http-client";
 import { ethers } from "ethers";
-import NavBar from "../Components/NavBar";
+import NavBar from "../Components/Navbar";
 import { Box, Button, TextField } from "@mui/material/";
-import { json } from "react-router-dom";
 export function Home(props) {
   const projectId = "2PxAxJftpMxj8bKkl8oDvZ4kII2";
   const projectSecretKey = "0b115116f44285db872c632d0ebd2672";
@@ -19,7 +18,7 @@ export function Home(props) {
     Description: "",
     file: "",
   });
-  const contractAddress = "0x524ACa1080e9D29d73ddB21c7cAE66f0dBff73DF";
+  const contractAddress = "0xe11FB0d3E16e0cd3240E14BE0E7420f0D2956276";
   const [provider, setProvider] = useState(null);
   const connectToMetaMask = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -29,18 +28,22 @@ export function Home(props) {
   const handleSubmit = async () => {
     try {
       const signer = provider.getSigner();
-      const added = await client.add(data.file);
-      const url = `https://manichand.infura-ipfs.io/ipfs/${added.path}`;
-      // console.log(url)
+      if(data.file!==""){
+        const added = await client.add(data.file);
+        var url = `https://manichand.infura-ipfs.io/ipfs/${added.path}`;
+        // console.log(url)
+        setData({...data,file:url})
+      }
       // const readFunction = new ethers.Contract(contractAddress,ABI,provider);
       const writeFunction = new ethers.Contract(contractAddress, ABI, signer);
       const result = await writeFunction.createNote(
         data.Tag,
         data.Description,
-        url
+        data.file
       );
       console.log(result);
       setData({ Tag: "", Description: "", file: "" });
+      window.location.replace("/notes");
     } catch (error) {
       console.log(error);
     }
