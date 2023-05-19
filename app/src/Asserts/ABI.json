@@ -24,6 +24,47 @@
   },
   {
     "type": "function",
+    "name": "deleteNote",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "index",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "tuple[]",
+        "name": "",
+        "components": [
+          {
+            "type": "string",
+            "name": "tag",
+            "internalType": "string"
+          },
+          {
+            "type": "string",
+            "name": "description",
+            "internalType": "string"
+          },
+          {
+            "type": "string",
+            "name": "file",
+            "internalType": "string"
+          },
+          {
+            "type": "uint256",
+            "name": "index",
+            "internalType": "uint256"
+          }
+        ],
+        "internalType": "struct Secreacy.Note[]"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
     "name": "get",
     "inputs": [],
     "outputs": [
@@ -45,12 +86,73 @@
             "type": "string",
             "name": "file",
             "internalType": "string"
+          },
+          {
+            "type": "uint256",
+            "name": "index",
+            "internalType": "uint256"
           }
         ],
         "internalType": "struct Secreacy.Note[]"
       }
     ],
     "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "updateNote",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "index",
+        "internalType": "uint256"
+      },
+      {
+        "type": "string",
+        "name": "_tag",
+        "internalType": "string"
+      },
+      {
+        "type": "string",
+        "name": "_description",
+        "internalType": "string"
+      },
+      {
+        "type": "string",
+        "name": "_file",
+        "internalType": "string"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "tuple",
+        "name": "",
+        "components": [
+          {
+            "type": "string",
+            "name": "tag",
+            "internalType": "string"
+          },
+          {
+            "type": "string",
+            "name": "description",
+            "internalType": "string"
+          },
+          {
+            "type": "string",
+            "name": "file",
+            "internalType": "string"
+          },
+          {
+            "type": "uint256",
+            "name": "index",
+            "internalType": "uint256"
+          }
+        ],
+        "internalType": "struct Secreacy.Note"
+      }
+    ],
+    "stateMutability": "nonpayable"
   },
   {
     "type": "function",
@@ -82,6 +184,11 @@
         "type": "string",
         "name": "file",
         "internalType": "string"
+      },
+      {
+        "type": "uint256",
+        "name": "index",
+        "internalType": "uint256"
       }
     ],
     "stateMutability": "view"
