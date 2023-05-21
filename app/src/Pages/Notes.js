@@ -17,8 +17,8 @@ import {
 } from "@mui/material/";
 //import {ModeEditOutlineIcon} from '@mui/icons-material/';
 export default function Notes() {
-  const projectId = "2PxAxJftpMxj8bKkl8oDvZ4kII2";
-  const projectSecretKey = "0b115116f44285db872c632d0ebd2672";
+  const projectId = "";
+  const projectSecretKey = "";
   const authorization = "Basic " + btoa(projectId + ":" + projectSecretKey);
   const client = create({
     url: "https://ipfs.infura.io:5001/api/v0",
