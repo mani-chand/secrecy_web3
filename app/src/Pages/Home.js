@@ -5,8 +5,8 @@ import { ethers } from "ethers";
 import NavBar from "../Components/Navbar";
 import { Box, Button, TextField } from "@mui/material/";
 export function Home(props) {
-  const projectId = "2PxAxJftpMxj8bKkl8oDvZ4kII2";
-  const projectSecretKey = "0b115116f44285db872c632d0ebd2672";
+  const projectId = "";
+  const projectSecretKey = "";
   const authorization = "Basic " + btoa(projectId + ":" + projectSecretKey);
   const client = create({
     url: "https://ipfs.infura.io:5001/api/v0",
