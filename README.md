@@ -1,5 +1,5 @@
 This is a project for secrecy and privacy of the users data.Today we have alot of ways to store the data but most of them are centralized services where one person is leader and he can access to all the data.
-This is a decentralized storing data Dapp where user can assess his data by his metamask account without metamask account even I (Founder of Dapp) cannot access the data.
+This is a decentralized storing data Dapp where user can access his data by his metamask account without metamask account even I (Founder of Dapp) cannot access the data.
 This is possible because of immutability of smart contarct and its privacy security features.
 
 Technologies used :
